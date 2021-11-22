@@ -36,6 +36,8 @@ class SectionsController < ApplicationController
 
   # D
   def destroy
+    @section.delete
+    redirect_to library_sections_path
   end
 
   private
