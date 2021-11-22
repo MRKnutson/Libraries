@@ -6,7 +6,7 @@ const Sections = (props) => {
       return(
         <div>
           <p>{section.genre}</p>
-          <a href= {`/libraries/${props.library.id}/sections/${section.id}`}>View Books</a>
+          <a href= {`/sections/${section.id}/books`}>View Books</a>
           <a href={`/libraries/${props.library.id}/sections/${section.id}/edit`}>Edit Section</a>
           <a href={`/libraries/${props.library.id}/sections/${section.id}`} data-method = "delete">Delete Section</a>
           <hr />
