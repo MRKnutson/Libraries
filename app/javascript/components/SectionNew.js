@@ -3,7 +3,6 @@ import React from "react"
 const SectionNew = (props) => {
   return(
     <div>
-      {/* <p>test</p> */}
       <h1>Add a new section to {props.library.name} Public Library</h1>
       <form action = {`/libraries/${props.library.id}/sections`} method ="post">
         <p>Section Genre:</p>

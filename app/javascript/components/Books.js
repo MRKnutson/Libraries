@@ -20,7 +20,7 @@ const Books = (props) => {
       <h1>{props.library.name} Public Library</h1>
       <h3>Section: {props.section.name}</h3>
       <a href={`/libraries/${props.library.id}/sections`}>View all sections</a>
-      <a href={`/sections/${props.section.id}/new`}>Add a book</a>
+      <a href={`/sections/${props.section.id}/books/new`}>Add a book</a>
       {renderBooks()}
     </div>
   )
