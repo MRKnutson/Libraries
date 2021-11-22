@@ -8,7 +8,7 @@ class SectionsController < ApplicationController
   end
 
   def create
-    @section = @library.sections.new(set_params)
+    @section = @library.sections.new(section_params)
     if @section.save
       redirect_to [@library, @section]
     end
@@ -20,15 +20,18 @@ class SectionsController < ApplicationController
   end
 
   def show
-    render component: "Section", props: {library: @library, section: @section}
+    render component: "Section", props: { library: @library, section: @section }
   end
 
   # U
   def edit
-    render component: "SectionEdit"
+    render component: "SectionEdit", props: { library: @library, section: @section }
   end
 
   def update
+    if (@section.update(section_params))
+      redirect_to [@library, @section]
+    end
   end
 
   # D
@@ -45,7 +48,7 @@ class SectionsController < ApplicationController
     @section = @library.sections.find(params[:id])
   end
 
-  def set_params
+  def section_params
     params.require(:section).permit(:genre)
   end
 
