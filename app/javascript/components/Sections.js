@@ -8,7 +8,7 @@ const Sections = (props) => {
           <p>{section.genre}</p>
           <a href= {`/libraries/${props.library.id}/sections/${section.id}`}>View Books</a>
           <a href={`/libraries/${props.library.id}/sections/${section.id}/edit`}>Edit Section</a>
-          <a href={`libraries/${props.library.id}/sections/${section.id}`} data-method = "delete">Delete Section</a>
+          <a href={`/libraries/${props.library.id}/sections/${section.id}`} data-method = "delete">Delete Section</a>
           <hr />
         </div>
        );
@@ -21,7 +21,7 @@ const Sections = (props) => {
       <p>{props.library.street_address}</p>
       <p>{props.library.city}, {props.library.state}</p>
       <a href="/libraries">Back to Library Index</a>
-      <a href={`libraries/${props.library.id}/sections/new`}>Create a new section</a>
+      <a href={`/libraries/${props.library.id}/sections/new`}>Create a new section</a>
       <h2>Sections:</h2>
       {renderSections()}
     </div>

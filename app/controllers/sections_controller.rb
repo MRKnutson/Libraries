@@ -4,10 +4,14 @@ class SectionsController < ApplicationController
 
   # C
   def new
-    render component: "SectionNew"
+    render component: "SectionNew", props: {library: @library}
   end
 
   def create
+    @section = @library.sections.new(set_params)
+    if @section.save
+      redirect_to [@library, @section]
+    end
   end
 
   # R
