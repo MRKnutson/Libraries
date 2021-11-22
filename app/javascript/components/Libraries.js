@@ -9,6 +9,8 @@ const Libraries = (props) => {
           <p>Address: {library.street_address}</p>
           <p>{library.city}, {library.state}</p>
           <a href={`/libraries/${library.id}`}>Library Details</a>
+          <a href={`/libraries/${library.id}/edit`}>Edit Library</a>
+          <a href={`/libraries/${library.id}`} data-method = "delete">Delete Library</a>
           <hr />
         </div>
       )

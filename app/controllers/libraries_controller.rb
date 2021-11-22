@@ -25,15 +25,19 @@ class LibrariesController < ApplicationController
 
   # (U)
   def edit
-    render component: "EditLibrary", props: {}
+    render component: "LibraryEdit", props: {library: @library}
   end
 
   def update
-
+    if (@library.update(library_params))
+      redirect_to libraries_path
+    end
   end
 
   # (D)
   def destroy
+    @library.destroy
+    redirect_to libraries_path
   end
 
   private
